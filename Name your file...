@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dot-Dotge Game</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: black;
+    }
+    #dot {
+      width: 30px;
+      height: 30px;
+      background: red;
+      border-radius: 50%;
+      position: absolute;
+      top: 50px;
+      left: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div id="dot"></div>
+
+  <script>
+    const dot = document.getElementById("dot");
+
+    document.addEventListener("keydown", (e) => {
+      const step = 10;
+      const rect = dot.getBoundingClientRect();
+      switch (e.key) {
+        case "ArrowUp":
+          dot.style.top = rect.top - step + "px";
+          break;
+        case "ArrowDown":
+          dot.style.top = rect.top + step + "px";
+          break;
+        case "ArrowLeft":
+          dot.style.left = rect.left - step + "px";
+          break;
+        case "ArrowRight":
+          dot.style.left = rect.left + step + "px";
+          break;
+      }
+    });
+  </script>
+</body>
+</html>
